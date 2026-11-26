@@ -145,7 +145,7 @@ export const modelPages = [
         'The Rover Intrepid starts from $59,990 and the fully-equipped Ultra from $74,990. Both are available on the All Terrain or Super Lite chassis, and there’s a full options catalogue to spec yours your way.',
         'Use our build-and-price tool for a transparent figure, then talk to us about a Queensland or interstate driveaway price and finance options. Tell us your details and we’ll help you build the right Rover - no pressure.',
       ],
-      includedHeading: "What's included as standard",
+      includedHeading: 'Frequently chosen features',
       included: [
         'Australian-made off-road chassis & Cruisemaster suspension',
         'Queen inner-spring bed in an insulated cabin',
@@ -304,7 +304,7 @@ export const modelPages = [
         'The Trekka On-Road starts from $99,990, the off-grid Ultra XT from $114,990, and the flagship Platinum XT from $129,990. There is a full options catalogue to spec yours your way.',
         'Use our build-and-price tool for a transparent figure, then talk to us about a Queensland or interstate driveaway price and finance. Tell us your details and we will help you build the right Trekka - no pressure.',
       ],
-      includedHeading: "What's included as standard",
+      includedHeading: 'Frequently chosen features',
       included: [
         'Hard composite cabin with queen inner-spring bed',
         'Internal bathroom - shower & cassette toilet',
@@ -455,7 +455,7 @@ export const modelPages = [
         "The Pod is modular, so what you pay depends on the version you choose and the racks, awnings and accessories you add. Start with a simple cargo trailer, or spec a full camper conversion - either way you get the same rust-proof tub, lockable lid and Australian-made chassis. Tell us how you'll use it and we'll put together a clear driveaway price.",
         'Enquire with SEQ Campers on the Sunshine Coast for a price to suit your build, and ask us about finance to fit your budget. No pressure - plan now and buy when you are ready.',
       ],
-      includedHeading: "What's included as standard",
+      includedHeading: 'Frequently chosen features',
       included: [
         'Rust-proof polyethylene tub & lid',
         'Lockable gas-strut Big Lid - no tarps',
@@ -613,7 +613,7 @@ export const modelPages = [
         'The S-Class Classic starts from $135,800, the S3 30th Anniversary from $172,100, and the fully-loaded T-Class T3 from $220,100, with a deep options catalogue and multiple floor plans.',
         "Use our build-and-price tool for a transparent figure, then talk to us about a Queensland or interstate driveaway price and finance. Tell us your details and we'll help you build the right Kruiser - no pressure.",
       ],
-      includedHeading: 'What makes it different',
+      includedHeading: 'Frequently chosen features',
       included: [
         'Full-width internal ensuite',
         '48V power that runs the air-con off-grid',
@@ -768,7 +768,7 @@ export const modelPages = [
         'The Karavan Classic starts from $125,885 and the fully-equipped Eco-Suite from $153,935, with a deep options catalogue to spec yours your way.',
         "Use our build-and-price tool for a transparent figure, then talk to us about a Queensland or interstate driveaway price and finance. Tell us your details and we'll help you build the right Karavan - no pressure.",
       ],
-      includedHeading: 'What makes it different',
+      includedHeading: 'Frequently chosen features',
       included: [
         'One-minute push-button expanding set-up',
         'Tows low like a camper trailer',
@@ -903,7 +903,7 @@ export const modelPages = [
         'The Kimberley Kube starts from $76,865 at SEQ Campers. Final pricing depends on the options you choose, such as the 85L fridge, cooker setup and solar, and we are happy to walk you through every choice before you commit.',
         'We are your local Sunshine Coast guide for Kimberley Kampers. Come and see the Kube in person, talk through how you travel, and we will help you land on the right build. Driveaway pricing and finance are available.',
       ],
-      includedHeading: "What's included as standard",
+      includedHeading: 'Frequently chosen features',
       included: [
         'King bed with panoramic windows',
         'Lithium battery power system',
@@ -1036,7 +1036,7 @@ export const modelPages = [
         'The Kimberley Kruiswagen starts from $199,850 at SEQ Campers on the Sunshine Coast. Because it is a complete motorhome rather than a caravan, that one figure covers the vehicle, the build and the off-grid living systems together - there is no separate tow vehicle to budget for.',
         'Final driveaway pricing depends on your chosen variant and options. Come and see us on the Sunshine Coast, walk through the layout in person, and we will put together honest driveaway numbers and finance options that suit you.',
       ],
-      includedHeading: "What's included as standard",
+      includedHeading: 'Frequently chosen features',
       included: [
         '4x4 off-road drivetrain with underbody protection',
         'PowerGlide loft bed that lowers from the ceiling',

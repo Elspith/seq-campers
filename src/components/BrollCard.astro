@@ -11,8 +11,12 @@
  * over brollVideoUrl (YouTube iframe - shows title/logo, and a play button
  * when mobile blocks autoplay). Falls back to mainImage so the tile still
  * renders when neither is set.
+ *
+ * Exception - sale photos: when the van's first photo is a sale banner (file
+ * name ending "-sale", see isSalePhoto in lib/sanity.js) the tile shows that
+ * photo INSTEAD of the video, so the offer is visible on the listing page.
  */
-import { sanityImage, youtubeId } from '../lib/sanity.js'
+import { sanityImage, youtubeId, isSalePhoto } from '../lib/sanity.js'
 
 const { caravan: c, showPrice = false } = Astro.props
 const slugStr = typeof c.slug === 'string' ? c.slug : c.slug?.current
@@ -21,6 +25,7 @@ const slugStr = typeof c.slug === 'string' ? c.slug : c.slug?.current
 const href = (slugStr && !c._isPlaceholder) ? `/stock/${slugStr}` : undefined
 
 const fileUrl = c.brollVideoFileUrl || null
+const saleImage = c.mainImage && isSalePhoto(c.mainImageName) ? c.mainImage : null
 const vid = youtubeId(c.brollVideoUrl)
 const stockNo = c.compliance?.stockNumber || ''
 const stockTail = stockNo.slice(-4)
@@ -38,7 +43,14 @@ const leadText = showPrice ? priceLabel : modelLine
 
 <a href={href} class="broll-card" data-brand={c.brand || ''}>
   <div class="broll-media">
-    {fileUrl ? (
+    {saleImage ? (
+      <img
+        class="broll-sale-img"
+        src={sanityImage(saleImage, { w: 960 })}
+        alt={`${c.title} - on sale`}
+        loading="lazy"
+      />
+    ) : fileUrl ? (
       <video
         data-lazy-src={fileUrl}
         muted
@@ -115,6 +127,9 @@ const leadText = showPrice ? priceLabel : modelLine
     border: 0;
     object-fit: cover;
   }
+  /* Sale banners are 4:3 with the offer + terms along the bottom edge; the
+     tile is 16:9, so anchor to the bottom and let the crop come off the top. */
+  .broll-media img.broll-sale-img { object-position: center bottom; }
   .broll-block {
     position: absolute;
     inset: 0;

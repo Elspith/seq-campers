@@ -1,6 +1,6 @@
 ---
 import Site from '../../layouts/Site.astro'
-import { getAllCaravanPaths, getCaravan, sanityImage, sanitySrcset, conditionLabel, portableTextToHtml } from '../../lib/sanity.js'
+import { getAllCaravanPaths, getCaravan, sanityImage, sanitySrcset, conditionLabel, portableTextToHtml, isSalePhoto } from '../../lib/sanity.js'
 
 // Phase 1 (Brisbane Show 2026): in-page React configurator removed. The
 // "Build your spec" CTA now routes to /quote/{brand} - dedicated brand-aware
@@ -228,6 +228,7 @@ const productSchema = {
               {caravan.photos.map((url, i) => (
                 <img
                   class="gallery-img"
+                  style={i === 0 && isSalePhoto(caravan.firstPhotoName) ? 'aspect-ratio:4/3;' : undefined}
                   src={sanityImage(url, { w: i === 0 ? 1200 : 600 })}
                   srcset={sanitySrcset(url, i === 0 ? [640, 960, 1200, 1600] : [320, 480, 640])}
                   sizes={i === 0 ? '(max-width: 1024px) 100vw, 65vw' : '(max-width: 1024px) 50vw, 32vw'}

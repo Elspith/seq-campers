@@ -41,6 +41,19 @@ export const urlFor = (source) => builder.image(source)
  * Append Sanity image CDN params to a URL.
  * Sanity supports ?w=, ?h=, ?fit=, ?auto=format directly on the asset URL.
  */
+/**
+ * Sale photos. When a unit is on special, the team uploads a banner photo
+ * (e.g. "Black Friday - $5,000 off") as the unit's FIRST photo, with a file
+ * name ending in "-sale" (brown-sale.jpg). While that photo is first:
+ *   - the /stock and /new tiles show it instead of the b-roll video, and
+ *   - the unit page shows it uncropped so the offer terms stay readable.
+ * Remove the photo (or move it off first place) in Sanity and the tile goes
+ * back to its video on the next build. No code change needed either way.
+ */
+export function isSalePhoto(filename) {
+  return /(^|[-_\s])sale(?=[-_\s.]|$)/i.test(filename || '')
+}
+
 export function sanityImage(url, opts = {}) {
   if (!url) return null
   const params = new URLSearchParams()
@@ -132,6 +145,7 @@ export async function getForSaleCaravans(stockType = null) {
       "brollVideoFileUrl": brollVideoFile.asset->url,
       "brand": brand->name,
       "mainImage": photos[0].asset->url,
+      "mainImageName": photos[0].asset->originalFilename,
       specs { sleeps, length, tareWeight, year },
       compliance { stockNumber }
     }
@@ -175,6 +189,7 @@ export async function getCaravan(slug) {
       _id, title, price, status, condition, description, features, topFeatures,
       "brand": brand->name,
       "photos": photos[].asset->url,
+      "firstPhotoName": photos[0].asset->originalFilename,
       heroVideo,
       "videos": videos[],
       specs,

@@ -37,6 +37,19 @@
   to = "/quote/kruiser/"
   status = 301
 
+# Kruiser quote builder hidden 26 Nov 2026 (new Kruiser model being released).
+# Temporary (302) so the builder URL keeps its standing when it comes back.
+# The older kruiser-t / kruiser-s links above land here too. Remove these two
+# blocks when the builder is un-hidden in src/data/quote-builders.js.
+[[redirects]]
+  from = "/quote/kruiser"
+  to = "/kimberley-kruiser/"
+  status = 302
+[[redirects]]
+  from = "/quote/kruiser/*"
+  to = "/kimberley-kruiser/"
+  status = 302
+
 [[headers]]
   for = "/*"
   [headers.values]

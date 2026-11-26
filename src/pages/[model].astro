@@ -4,7 +4,9 @@ import { modelPages, getModelPage } from '../data/model-pages.js'
 import { getModelPricing, getBusinessDetails } from '../lib/sanity.js'
 
 export async function getStaticPaths() {
-  return modelPages.map((m) => ({ params: { model: m.slug } }))
+  // comingSoon models have their own short notice page (e.g.
+  // src/pages/kimberley-kruiser.astro), so the full page is not built.
+  return modelPages.filter((m) => !m.comingSoon).map((m) => ({ params: { model: m.slug } }))
 }
 
 const { model } = Astro.params

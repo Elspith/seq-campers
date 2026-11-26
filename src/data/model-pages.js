@@ -497,6 +497,14 @@ export const modelPages = [
   },
   {
     slug: 'kimberley-kruiser',
+    // HIDDEN (Maud, 26 Nov 2026): a new Kruiser full-size caravan is being
+    // released. While this flag is true the full page below is NOT built -
+    // src/pages/kimberley-kruiser.astro shows a short notice instead, and the
+    // /new tile reads "New model coming" with no price. To bring the page
+    // back: update the content below for the new model, delete this flag and
+    // delete src/pages/kimberley-kruiser.astro. (Also un-hide the 'kruiser'
+    // quote builder and remove the /quote/kruiser redirect in netlify.toml.)
+    comingSoon: true,
     configuratorSlug: 'kruiser',
     brand: 'Kimberley',
     name: 'Kimberley Kruiser',

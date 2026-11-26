@@ -1264,6 +1264,10 @@ export const quoteBuilders = [
   // -------------------------------------------------------------------------
   {
     slug: 'kruiser',
+    // HIDDEN (Maud, 26 Nov 2026): new Kruiser model being released, so this
+    // builder is not built. /quote/kruiser redirects to the notice page (see
+    // netlify.toml). Delete this flag once the new model's pricing is in.
+    hidden: true,
     brandFamily: 'Kimberley',
     name: 'Kimberley Kruiser',
     intro: 'The flagship off-road tourer - choose your Kruiser: the S Class Classic, the S3 30th Anniversary, or the 7.3m T Class.',

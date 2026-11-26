@@ -1,0 +1,48 @@
+---
+// TEMPORARY notice page (Maud, 26 Nov 2026). A new Kruiser full-size caravan
+// is being released, so the full Kruiser model page is hidden until the new
+// details arrive (comingSoon flag in src/data/model-pages.js). Delete this
+// file when the new page content is ready.
+import Site from '../layouts/Site.astro'
+
+const siteBase = (Astro.site ?? new URL('https://seqcampers.com.au')).origin
+---
+
+<Site
+  title="New Kimberley Kruiser Coming | Sunshine Coast QLD | SEQ Campers"
+  description="Kimberley Kampers is releasing a new Kruiser full-size caravan. Full details will be published here by SEQ Campers on the Sunshine Coast. Enquire to be among the first to hear."
+>
+  <Fragment slot="head">
+    <link rel="canonical" href={`${siteBase}/kimberley-kruiser`} />
+  </Fragment>
+
+  <div class="ks">
+    <header class="ks-hero">
+      <div class="ks-inner">
+        <span class="ks-pill">Kimberley Kampers · Kruiser</span>
+        <h1>A new Kimberley Kruiser is on its way.</h1>
+        <p class="ks-lead">Kimberley Kampers is releasing a new Kruiser full-size caravan. We have hidden this page for now, and the full specification and pricing will be published here as soon as we have them.</p>
+        <p class="ks-lead">If you would like to be among the first to hear, or you have a question about the Kruiser in the meantime, call us on 07 5370 7933 or send us an enquiry.</p>
+        <div class="ks-cta-row">
+          <a class="ks-btn" href="/contact">Enquire about the new Kruiser</a>
+          <a class="ks-btn ks-btn-sec" href="/new">See the rest of the range</a>
+        </div>
+      </div>
+    </header>
+  </div>
+</Site>
+
+<style>
+  /* Same look as the model page hero in [model].astro. */
+  .ks { --earth: #2A1608; --rock: #C0341A; --rock-dark: #A02D15; --gold: #D4943A; --sand: #DCCBA8; --off: #F4EDE0; font-size: 17px; line-height: 1.6; }
+  .ks-hero { background: linear-gradient(105deg, #1A0E06 0%, #3a1c0e 32%, #7a2d15 72%, #C0341A 100%); color: var(--off); border-bottom: 4px solid var(--gold); }
+  .ks-inner { max-width: 1300px; margin: 0 auto; padding: 64px 20px 72px; }
+  .ks-pill { display: inline-block; background: var(--rock); color: var(--off); font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px; letter-spacing: 0.04em; }
+  .ks-hero h1 { font-family: 'Inter Tight', sans-serif; font-size: clamp(38px, 6vw, 56px); font-weight: 900; line-height: 1.15; letter-spacing: -0.01em; margin: 18px 0 20px; color: var(--off); max-width: 16ch; }
+  .ks-lead { font-size: clamp(17px, 2.4vw, 21px); color: var(--sand); max-width: 56ch; margin: 0 0 16px; }
+  .ks-cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+  .ks-btn { display: inline-block; background: var(--rock); color: var(--off); font-family: 'Inter Tight', sans-serif; font-weight: 700; padding: 16px 32px; border-radius: 6px; font-size: 17px; text-decoration: none; transition: transform .15s, background .15s, box-shadow .15s; }
+  .ks-btn:hover { background: var(--rock-dark); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(42,22,8,.28); }
+  .ks-btn-sec { background: rgba(244,237,224,0.08); border: 2px solid rgba(244,237,224,0.45); }
+  .ks-btn-sec:hover { background: var(--gold); color: var(--earth); border-color: var(--gold); }
+</style>

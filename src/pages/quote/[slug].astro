@@ -4,7 +4,7 @@ import { quoteBuilders, getQuoteBuilder } from '../../data/quote-builders.js'
 import { getSiteSettings, youtubeId, getQuoteBuilder as getSanityQuoteBuilder } from '../../lib/sanity.js'
 
 export async function getStaticPaths() {
-  return quoteBuilders.map((b) => ({ params: { slug: b.slug } }))
+  return quoteBuilders.filter((b) => !b.hidden).map((b) => ({ params: { slug: b.slug } }))
 }
 
 const { slug } = Astro.params

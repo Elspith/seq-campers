@@ -4,6 +4,7 @@ import BrollCard from '../../components/BrollCard.astro'
 import ReserveCta from '../../components/ReserveCta.astro'
 import YoutubeSubscribeBar from '../../components/YoutubeSubscribeBar.astro'
 import { getNewCaravans, getSiteSettings, getAllModelPricing, youtubeId } from '../../lib/sanity.js'
+import { getModelPage } from '../../data/model-pages.js'
 
 let caravans = []
 try {
@@ -67,7 +68,10 @@ function resolveTile(idx) {
   const modelSlug = (ctaHref || '').replace(/^\//, '')
   const mp = pricingByModel[modelSlug]
   let priceLabel
-  if (mp) {
+  if (getModelPage(modelSlug)?.comingSoon) {
+    // Model page is hidden behind a "new model coming" notice - show no price.
+    priceLabel = 'New model coming'
+  } else if (mp) {
     if (mp.priceOnApplication) priceLabel = 'Contact us for current pricing'
     else if (mp.heroPriceFrom && mp.heroPriceFrom.trim()) priceLabel = `From ${mp.heroPriceFrom.trim()}`
     else priceLabel = 'Enquire'

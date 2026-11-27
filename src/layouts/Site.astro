@@ -46,7 +46,9 @@ const addressSuburb = biz?.addressSuburb || 'Marcoola'
 const addressState = biz?.addressState || 'QLD'
 const addressPostcode = biz?.addressPostcode || '4564'
 const showroomHours = biz?.showroomHours || 'Mon - Fri: 8:30am - 3pm\nSaturday: 8:30am - 12:30pm\nSunday: Closed'
-const youtubeUrl = biz?.youtubeUrl || 'https://www.youtube.com/@seqcampers?sub_confirmation=1'
+// The channel handle changed from @seqcampers9450 to @seqcampers on 27 Nov 2026.
+// Sanity "Business details" may still hold the old address, so correct it here.
+const youtubeUrl = (biz?.youtubeUrl || 'https://www.youtube.com/@seqcampers?sub_confirmation=1').replace('@seqcampers9450', '@seqcampers')
 // Contact-bar map link + short location label (kept as literals - they are
 // display sugar, not the canonical address which lives in the fields above).
 const cbMapQuery = biz?.mapQuery || '6 Bonanza Court Marcoola QLD 4564'

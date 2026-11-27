@@ -61,7 +61,7 @@ const doc = {
   addressFull: '3B/6 Bonanza Court, Marcoola QLD 4564',
   showroomHours: 'Mon - Fri: 8:30am - 3pm\nSaturday: 8:30am - 12:30pm\nSunday: Closed',
   abn: '83 631 928 188',
-  youtubeUrl: 'https://www.youtube.com/@seqcampers9450',
+  youtubeUrl: 'https://www.youtube.com/@seqcampers',
   instagramUrl: 'https://www.instagram.com/seq_campers/',
   facebookUrl: '',
   mapQuery: 'SEQ Campers, 3B/6 Bonanza Court, Marcoola QLD 4564, Australia',

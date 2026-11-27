@@ -2,13 +2,13 @@
 /**
  * YouTube Subscribe CTA - the secondary call to action.
  *
- * Direct link to the @seqcampers9450 channel with sub_confirmation=1 so the
+ * Direct link to the @seqcampers channel with sub_confirmation=1 so the
  * subscribe modal opens immediately. Opens in a new tab so the visitor never
  * leaves the SEQ site. (YouTube does not allow in-page subscribe - their
  * frame-ancestors policy blocks iframe embeds of the subscribe flow.)
  */
 const channelUrl =
-  'https://www.youtube.com/@seqcampers9450?sub_confirmation=1'
+  'https://www.youtube.com/@seqcampers?sub_confirmation=1'
 const { variant = 'bar', headline, sub } = Astro.props
 const defaultHeadline = 'Watch our latest walkthrough'
 const defaultSub = 'New off-road video every fortnight. Join 2,000+ subscribers.'
@@ -39,7 +39,7 @@ const defaultSub = 'New off-road video every fortnight. Join 2,000+ subscribers.
           Subscribe on YouTube
         </a>
         <a
-          href="https://www.youtube.com/@seqcampers9450/videos"
+          href="https://www.youtube.com/@seqcampers/videos"
           target="_blank"
           rel="noopener"
           class="btn-ghost youtube-btn-watch"
